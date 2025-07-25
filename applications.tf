@@ -16,7 +16,10 @@ resource "auth0_client" "cloudflare_zta" {
   allowed_origins = []
 
   # Grant types for web applications
-  grant_types = []
+  grant_types = [
+    "authorization_code",
+    "refresh_token"
+  ]
 
 
   # ZTA-specific security settings
