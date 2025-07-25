@@ -16,7 +16,7 @@ resource "auth0_connection" "managed_users" {
     }
 
     # Disable signup to control user creation
-    disable_signup = false
+    disable_signup = true
 
     # Brute force protection
     brute_force_protection = true
@@ -36,5 +36,6 @@ resource "auth0_connection_clients" "managed_users_clients" {
   connection_id = auth0_connection.managed_users.id
   enabled_clients = [
     auth0_client.cloudflare_zta.id,
+    data.auth0_client.administrative.id
   ]
 }
