@@ -39,21 +39,3 @@ resource "auth0_connection" "managed_users" {
 
   }
 }
-
-# Optional: Create a user in the database connection
-# resource "auth0_user" "example_user" {
-#   connection_name = auth0_connection.database_connection.name
-#   email          = "user@example.com"
-#   username       = "exampleuser"
-#   password       = "SecurePassword123!"
-#   email_verified = true
-
-#   # Additional user metadata
-#   user_metadata = jsonencode({
-#     preference = "example"
-#   })
-
-#   app_metadata = jsonencode({
-#     role = "user"
-#   })
-# }
