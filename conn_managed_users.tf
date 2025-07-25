@@ -16,7 +16,7 @@ resource "auth0_connection" "managed_users" {
     }
 
     # Disable signup to control user creation
-    disable_signup = true
+    disable_signup = false
 
     # Brute force protection
     brute_force_protection = true
