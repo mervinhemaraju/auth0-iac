@@ -17,8 +17,7 @@ resource "auth0_client" "cloudflare_zta" {
 
   # Grant types for web applications
   grant_types = [
-    "authorization_code",
-    "refresh_token"
+    "client_credentials"
   ]
 
 
