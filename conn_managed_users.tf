@@ -28,14 +28,13 @@ resource "auth0_connection" "managed_users" {
         max = 50
       }
     }
-
-    # Attributes to be stored and returned
-    # attributes {
-    #   email      = "required"
-    #   username   = "required"
-    #   given_name = "optional"
-    #   family_name = "optional"
-    # }
-
   }
+}
+
+# Client connection association
+resource "auth0_connection_clients" "managed_users_clients" {
+  connection_id = auth0_connection.managed_users.id
+  enabled_clients = [
+    auth0_client.cloudflare_zta.id,
+  ]
 }
