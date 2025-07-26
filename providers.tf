@@ -3,6 +3,11 @@ provider "doppler" {
   doppler_token = var.token_doppler_global
 }
 
+# Cloudflare Provider Configuration
+provider "cloudflare" {
+  api_token = data.doppler_secrets.apps.map.CLOUDFLARE_TERRAFORM_TOKEN
+}
+
 # Auth0 Provider Configuration
 provider "auth0" {
   domain        = data.doppler_secrets.auth0.map.AUTH0_ADMINISTRATIVE_DOMAIN

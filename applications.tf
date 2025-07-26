@@ -4,7 +4,9 @@ resource "auth0_client" "cloudflare_zta" {
   app_type    = "regular_web"
 
   # Callback URLs for your ZTA application
-  callbacks = []
+  callbacks = [
+    "https://${data.cloudflare_zero_trust_organization.plagueworks.auth_domain}.cloudflareaccess.com/cdn-cgi/access/callback"
+  ]
 
   # Allowed logout URLs
   allowed_logout_urls = []
