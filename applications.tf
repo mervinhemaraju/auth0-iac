@@ -46,8 +46,5 @@ resource "auth0_client" "cloudflare_zta" {
 
   # Cross-origin authentication
   cross_origin_auth = false
-
-  # Required for ZTA integration
-  is_first_party = false
 }
 
