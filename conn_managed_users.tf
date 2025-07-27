@@ -35,7 +35,7 @@ resource "auth0_connection" "managed_users" {
 resource "auth0_connection_clients" "managed_users_clients" {
   connection_id = auth0_connection.managed_users.id
   enabled_clients = [
-    auth0_client.cloudflare_zta.id,
+    # auth0_client.cloudflare_zta.id,
     data.auth0_client.administrative.id
   ]
 }
