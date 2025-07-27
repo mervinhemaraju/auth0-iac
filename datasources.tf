@@ -20,5 +20,5 @@ data "cloudflare_accounts" "plagueworks" {
 
 # Get the zero trust organization
 data "cloudflare_zero_trust_organization" "plagueworks" {
-  account_id = data.cloudflare_accounts.plagueworks.results[0].id
+  account_id = data.cloudflare_accounts.plagueworks.result[0].id
 }
