@@ -12,17 +12,14 @@ resource "auth0_client" "cloudflare_zta" {
   # Web origins for CORS
   web_origins = local.contants.applications.cloudflare_zta.allowed_urls
 
-  # # Allowed origins for logout
-  # allowed_origins = []
+  # The grant types
+  grant_types = [
+    "authorization_code",
+    "refresh_token"
+  ]
 
-  # Grant types for web applications
-  # grant_types = [
-  #   "client_credentials"
-  # ]
-
-
-  # ZTA-specific security settings
-  #   oidc_conformant = true
+  # OIDC conformant - Required for proper OIDC flow
+  oidc_conformant = true
 
   # JWT configuration for enhanced security
   #   jwt_configuration {
@@ -47,32 +44,10 @@ resource "auth0_client" "cloudflare_zta" {
   #     rotation_type                = "rotating"
   #   }
 
-  # Client metadata for ZTA
-  #   client_metadata = {
-  #     "zta_enabled"           = "true"
-  #     "security_level"        = "high"
-  #     "risk_assessment"       = "enabled"
-  #     "device_fingerprinting" = "enabled"
-  #     "geo_location_check"    = "enabled"
-  #   }
-
-  # Advanced settings for ZTA
-  #   custom_login_page_on = true
-  #   is_first_party       = true
-
   # Cross-origin authentication
   cross_origin_auth = false
 
-  # SSO settings
-  #   sso          = true
-  #   sso_disabled = false
-  #   cross_origin_location = "https://your-zta-app.com"
-
-  # Encryption settings
-  #   require_proof_of_possession = false
-
-  # Organization usage (for ZTA multi-tenancy)
-  #   organization_usage            = "allow"
-  #   organization_require_behavior = "no_prompt"
+  # Required for ZTA integration
+  is_first_party = false
 }
 
