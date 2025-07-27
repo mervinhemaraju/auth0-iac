@@ -4,23 +4,21 @@ resource "auth0_client" "cloudflare_zta" {
   app_type    = "regular_web"
 
   # Callback URLs for your ZTA application
-  callbacks = [
-    "https://${data.cloudflare_zero_trust_organization.plagueworks.auth_domain}.cloudflareaccess.com/cdn-cgi/access/callback"
-  ]
+  callbacks = local.contants.applications.cloudflare_zta.callbacks
 
   # Allowed logout URLs
-  allowed_logout_urls = []
+  allowed_logout_urls = local.contants.applications.cloudflare_zta.allowed_urls
 
   # Web origins for CORS
-  web_origins = []
+  web_origins = local.contants.applications.cloudflare_zta.allowed_urls
 
-  # Allowed origins for logout
-  allowed_origins = []
+  # # Allowed origins for logout
+  # allowed_origins = []
 
   # Grant types for web applications
-  grant_types = [
-    "client_credentials"
-  ]
+  # grant_types = [
+  #   "client_credentials"
+  # ]
 
 
   # ZTA-specific security settings
