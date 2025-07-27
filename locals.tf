@@ -11,7 +11,7 @@ locals {
         ]
 
         allowed_urls = [
-          "*.mervinhemaraju.com"
+          "https://*.mervinhemaraju.com"
         ]
 
       }
