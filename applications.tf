@@ -14,25 +14,19 @@ resource "auth0_client" "cloudflare_zta" {
 
   # The grant types
   grant_types = [
+    "implicit",
     "authorization_code",
-    "refresh_token"
+    "refresh_token",
+    "client_credentials"
   ]
 
   # OIDC conformant - Required for proper OIDC flow
   oidc_conformant = true
 
   # JWT configuration for enhanced security
-  #   jwt_configuration {
-  #     lifetime_in_seconds = 3600 # 1 hour
-  #     secret_encoded      = false
-  #     alg                 = "RS256"
-  #     scopes = {
-  #       "openid"         = "OpenID Connect"
-  #       "profile"        = "User profile information"
-  #       "email"          = "User email address"
-  #       "offline_access" = "Refresh tokens"
-  #     }
-  #   }
+  jwt_configuration {
+    alg = "RS256"
+  }
 
   # Refresh token configuration
   #   refresh_token {
@@ -47,6 +41,7 @@ resource "auth0_client" "cloudflare_zta" {
   # Cross-origin authentication
   cross_origin_auth = false
 
+  # First party
   is_first_party = true
 }
 
