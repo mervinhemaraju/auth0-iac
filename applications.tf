@@ -46,3 +46,8 @@ resource "auth0_client" "cloudflare_zta" {
   is_first_party = true
 }
 
+# Configures a credential for the application
+resource "auth0_client_credentials" "cloudflare_zta" {
+  client_id             = auth0_client.cloudflare_zta.id
+  authentication_method = "client_secret_post"
+}

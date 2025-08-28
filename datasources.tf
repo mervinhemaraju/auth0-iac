@@ -1,11 +1,11 @@
 # Fetch secrets from Doppler secrets manager
 data "doppler_secrets" "auth0_creds" {
-  project = "auth0-creds"
+  project = local.contants.secrets.auth0
 }
 
 # Fetch Cloudflare token secrets
 data "doppler_secrets" "cloudflare_creds" {
-  project = "cloudflare-creds"
+  project = local.contants.secrets.cloudflare
 }
 
 # Get the administrative client 

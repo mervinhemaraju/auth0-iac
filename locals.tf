@@ -2,6 +2,11 @@ locals {
 
   contants = {
 
+    secrets = {
+      cloudflare = "cloudflare_creds"
+      auth0      = "auth0-creds"
+    }
+
     applications = {
 
       cloudflare_zta = {
