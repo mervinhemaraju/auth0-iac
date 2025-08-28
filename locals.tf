@@ -1,7 +1,7 @@
 locals {
 
   secrets = {
-    cloudflare = "cloudflare_creds"
+    cloudflare = "cloudflare-creds"
     auth0      = "auth0-creds"
   }
 
