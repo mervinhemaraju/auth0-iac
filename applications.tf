@@ -21,6 +21,7 @@ resource "auth0_client" "cloudflare_zta" {
   ]
 
   # OIDC conformant - Required for proper OIDC flow
+  sso             = true
   oidc_conformant = true
 
   # JWT configuration for enhanced security
