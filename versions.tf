@@ -11,11 +11,6 @@ terraform {
       version = "~> 1"
     }
 
-    auth0 = {
-      source  = "auth0/auth0"
-      version = "~> 1.24"
-    }
-
     cloudflare = {
       source  = "cloudflare/cloudflare"
       version = "~> 5.7"
