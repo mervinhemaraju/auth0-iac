@@ -24,7 +24,7 @@ locals {
       argocd_plagueworks = {
 
         callbacks = [
-          "https://argocd.plagueworks.org/api/dex/callback"
+          "https://argocd.plagueworks.org/auth/callback"
         ]
 
         allowed_urls = [
