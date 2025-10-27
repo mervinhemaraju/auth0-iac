@@ -20,6 +20,18 @@ locals {
         ]
 
       }
+
+      argocd_plagueworks = {
+
+        callbacks = [
+          "https://argocd.plagueworks.org/api/dex/callback"
+        ]
+
+        allowed_urls = [
+          "https://argocd.plagueworks.org"
+        ]
+
+      }
     }
   }
 }
